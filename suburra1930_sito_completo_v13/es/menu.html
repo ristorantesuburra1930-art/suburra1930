@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Il menù di Suburra 1930 — cucina romana, cocktail signature e bevande. Ristorante nel Rione Monti, Roma.">
+<title>Menú · Suburra 1930</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css">
+<style>
+/* TABS NAV */
+.menu-nav {
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+  background: var(--dark-mid);
+  border-bottom: 1px solid rgba(184,152,90,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.menu-nav-tab {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(184,152,90,0.2);
+  padding: 1.1rem 2.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: block;
+}
+.menu-nav-tab:last-child { border-right: none; }
+.menu-nav-tab:hover { color: var(--gold-light); }
+.menu-nav-tab.active { color: var(--gold); background: rgba(184,152,90,0.08); }
+
+/* SEZIONE CUCINA */
+.cucina { background: var(--cream); padding: 5rem 0; }
+.cucina-inner { max-width: 960px; margin: 0 auto; padding: 0 5rem; }
+
+.menu-note-top {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(184,152,90,0.2);
+}
+
+.menu-category { margin-bottom: 3.5rem; }
+
+.menu-category-title {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(184,152,90,0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.menu-category-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(184,152,90,0.2);
+  display: none;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.1);
+}
+.menu-item:last-child { border-bottom: none; }
+
+.menu-item-left { flex: 1; }
+.menu-item-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+}
+.menu-item-desc {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.menu-item-price {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* SEZIONE COCKTAIL */
+.cocktail { background: var(--dark); padding: 5rem 0; }
+.cocktail-inner { max-width: 960px; margin: 0 auto; padding: 0 5rem; }
+
+.cocktail-intro {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(245,240,232,0.5);
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(184,152,90,0.15);
+  max-width: 55ch;
+}
+
+.cocktail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(184,152,90,0.12);
+  margin-bottom: 3rem;
+}
+.cocktail-card {
+  background: var(--dark-mid);
+  padding: 2rem;
+  transition: background 0.2s;
+}
+.cocktail-card:hover { background: var(--dark-soft); }
+
+.cocktail-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.cocktail-name {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+.cocktail-desc {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.cocktail-price {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--gold-light);
+}
+
+/* SEZIONE BEVANDE */
+.bevande { background: var(--cream-dark); padding: 5rem 0; }
+.bevande-inner { max-width: 960px; margin: 0 auto; padding: 0 5rem; }
+
+.bevande-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 2.5rem;
+}
+.bev-section-title {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(184,152,90,0.25);
+}
+
+/* CTA */
+.menu-cta {
+  background: var(--gold);
+  padding: 4rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.menu-cta-text {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: var(--dark);
+}
+.menu-cta-text em { font-style: italic; }
+
+.menu-seasonal-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(26,22,18,0.5);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .cucina-inner, .cocktail-inner, .bevande-inner { padding: 0 1.5rem; }
+  .cocktail-grid { grid-template-columns: 1fr; }
+  .bevande-cols { grid-template-columns: 1fr; gap: 2.5rem; }
+  .menu-nav { overflow-x: auto; justify-content: flex-start; }
+  .menu-nav-tab { white-space: nowrap; }
+  .menu-cta { padding: 3rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+.has-dropdown{position:relative}.dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(26,22,18,.98);border:1px solid rgba(184,152,90,.25);border-top:2px solid var(--gold);list-style:none;min-width:200px;z-index:200;padding:.5rem 0}.has-dropdown:hover .dropdown{display:block}.dropdown a{display:block;padding:.6rem 1.2rem;font-size:.65rem!important;letter-spacing:.15em!important;color:rgba(245,240,232,.7)!important;white-space:nowrap}.dropdown a:hover{color:var(--gold-light)!important;background:rgba(184,152,90,.08)}
+
+
+/* ── NAV RIGHT ── */
+
+
+.lang-switcher { display: flex; gap: 0.25rem; align-items: center; }
+
+
+
+/* ── MOBILE LANG ── */
+
+.mobile-lang 
+.mobile-lang 
+
+
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.lang-btn .flag { font-size: 1rem; line-height: 1; }
+.lang-btn 
+.lang-btn:hover {
+  background: rgba(184,152,90,0.15);
+  border-color: rgba(184,152,90,0.6);
+  color: var(--gold-light);
+}
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+/* mobile lang switcher inside hamburger menu */
+
+.mobile-lang 
+.mobile-lang .lang-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+}
+@media (max-width: 900px) {
+  .lang-switcher { display: none; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 88px;
+  background: rgba(26,22,18,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,152,90,0.25);
+}
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+.nav-logo-img:hover { opacity: 0.8; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── LANG SWITCHER ── */
+.lang-switcher { display: flex; gap: 4px; align-items: center; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid rgba(184,152,90,0.3);
+  background: rgba(26,22,18,0.5);
+  color: rgba(245,240,232,0.55);
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.flag-img {
+  width: 20px;
+  height: 14px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  object-fit: cover;
+}
+.lang-btn .lang-label { font-size: 0.6rem; }
+.lang-btn:hover { background: rgba(184,152,90,0.15); border-color: rgba(184,152,90,0.6); color: var(--gold-light); }
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.lang-btn.active .lang-label { color: var(--dark); }
+
+/* ── MOBILE MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.25s; }
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0; right: 0;
+  background: rgba(26,22,18,0.98);
+  border-top: 1px solid rgba(184,152,90,0.2);
+  padding: 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-item {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.8);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.1);
+  display: block;
+}
+.nav-mobile-item:last-child { border-bottom: none; }
+.nav-mobile-sub { padding-left: 1.2rem; font-size: 0.8rem; color: rgba(245,240,232,0.55); }
+.nav-mobile-cta {
+  margin-top: 1.2rem;
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 1rem;
+  text-decoration: none;
+}
+.mobile-lang {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.15);
+}
+.mobile-lang .lang-btn {
+  background: rgba(184,152,90,0.08);
+  border-color: rgba(184,152,90,0.2);
+  color: rgba(245,240,232,0.7);
+  font-size: 0.72rem;
+  padding: 6px 10px;
+}
+.mobile-lang .lang-btn.active { background: var(--gold); color: var(--dark); }
+.mobile-lang .flag-img { width: 22px; height: 15px; }
+.mobile-lang .lang-label { font-size: 0.68rem; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 1.2rem; height: 72px; }
+  .nav-logo-img { height: 46px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .lang-switcher { display: none; }
+  .nav-mobile-menu { top: 72px; }
+}
+
+/* ── GOLD TEXT: bold + slightly larger ── */
+.section-eyebrow,
+.hero-eyebrow,
+.page-hero-eyebrow,
+.menu-card-tag,
+.cocktail-tag,
+.news-card-cat,
+.news-card-date,
+.score-platform,
+.review-author,
+.orario-label,
+.footer-col-title,
+.footer-contact-label,
+.info-strip-text,
+.event-icon,
+.cap-label,
+.orari-block-label,
+.contact-block-label,
+.bev-section-title,
+.menu-category-title,
+.menu-subsection-title,
+.event-feature::before,
+.badge,
+.menu-item-price { font-weight: 700 !important; }
+
+.section-eyebrow { font-size: 0.73rem !important; }
+.page-hero-eyebrow { font-size: 0.73rem !important; }
+.hero-eyebrow { font-size: 0.73rem !important; }
+.menu-item-price { font-size: 1.05rem !important; }
+.footer-col-title { font-size: 0.73rem !important; }
+.footer-contact-label { font-size: 0.71rem !important; }
+
+/* ── FOOTER FONT SIZE BOOST ── */
+.footer-links a { font-size: 0.88rem !important; }
+.footer-brand-desc { font-size: 0.88rem !important; }
+.footer-contact-value { font-size: 1.05rem !important; }
+.footer-contact-value a { font-size: 1.05rem !important; }
+.footer-legal { font-size: 0.76rem !important; }
+.footer-social a { font-size: 0.74rem !important; font-weight: 700 !important; }
+
+</style>
+</head>
+<body>
+<script>
+function setLang(l,u){localStorage.setItem('suburra_lang',l);window.location.href=u;}
+(function(){
+  var p=window.location.pathname,c='it';
+  if(/\/en\//.test(p))c='en';else if(/\/es\//.test(p))c='es';else if(/\/fr\//.test(p))c='fr';
+  var s=localStorage.getItem('suburra_lang');
+  if(s&&s!==c){
+    var f=p.split('/').pop()||'index.html';
+    var b=window.location.href.replace(/[^\/]*$/,'').replace(/\/(en|es|fr)\/$/,'/');
+    window.location.replace(s==='it'?b+f:b+s+'/'+f);
+  }
+})();
+</script>
+
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="../logo.png" alt="Suburra 1930" class="nav-logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="chi-siamo.html">Quiénes somos</a></li>
+    <li class="has-dropdown"><a href="menu.html">Menú</a>
+      <ul class="dropdown">
+        <li><a href="i-piatti-del-menu.html">Cocina</a></li>
+        <li><a href="menu-bevande.html">Bebidas</a></li>
+        <li><a href="menu-cocktail-signature.html">Cócteles Signature</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="eventi-privati.html">Eventos privados</a>
+      <ul class="dropdown">
+        <li><a href="compleanno-a-roma.html">Cumpleaños</a></li>
+        <li><a href="festa-di-laurea-roma.html">Graduaciones</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cenas de empresa</a></li>
+      </ul>
+    </li>
+    <li><a href="news.html">Noticias</a></li>
+    <li><a href="contatti.html">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher"><a href="menu.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">IT</span></a><a href="en/menu.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">EN</span></a><a href="es/menu.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">ES</span></a><a href="fr/menu.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">FR</span></a></div>
+    <a href="https://pro.pns.sm/7h27rbg" class="nav-cta" target="_blank" rel="noopener">Reservar</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item">Home</a>
+  <a href="chi-siamo.html" class="nav-mobile-item">Quiénes somos</a>
+  <a href="i-piatti-del-menu.html" class="nav-mobile-item nav-mobile-sub">— Cocina</a>
+  <a href="menu-bevande.html" class="nav-mobile-item nav-mobile-sub">— Bebidas</a>
+  <a href="menu-cocktail-signature.html" class="nav-mobile-item nav-mobile-sub">— Cócteles Signature</a>
+  <a href="compleanno-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Cumpleaños</a>
+  <a href="festa-di-laurea-roma.html" class="nav-mobile-item nav-mobile-sub">— Graduaciones</a>
+  <a href="cena-aziendale-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Cenas de empresa</a>
+  <a href="news.html" class="nav-mobile-item">Noticias</a>
+  <a href="contatti.html" class="nav-mobile-item">Contacto</a>
+  <div class="mobile-lang"><a href="menu.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">Italiano</span></a><a href="en/menu.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">English</span></a><a href="es/menu.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">Español</span></a><a href="fr/menu.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">Français</span></a></div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar</a>
+</div>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Comer y beber</span>
+  <h1 class="page-hero-title">El <em>menú</em></h1>
+  <p class="page-hero-sub">Cocina romana · Cócteles signature · Vini e distillati</p>
+</div>
+<img
+  src="https://suburra1930.it/wp-content/uploads/2019/01/SUBURRA-menu-1200x800-2024-3.jpg"
+  alt="Piatti Suburra 1930"
+  class="page-hero-img"
+  loading="eager"
+>
+
+<div class="menu-nav">
+  <a href="#cucina" class="menu-nav-tab active">Cocina</a>
+  <a href="#cocktail" class="menu-nav-tab">Cócteles Signature</a>
+  <a href="#bevande" class="menu-nav-tab">Bebidas</a>
+</div>
+
+<!-- CUCINA -->
+<section class="cucina" id="cucina">
+  <div class="cucina-inner">
+    <span class="section-eyebrow">La cucina</span>
+    <h2 class="section-title">Cocina <em>romana</em></h2>
+    <p class="menu-note-top">Menú de temporada — los platos pueden variar según la disponibilidad de ingredientes. Informen al personal de cualquier alergia o intolerancia.</p>
+
+    <div class="menu-category">
+      <div class="menu-category-title">Entrantes</div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Supplì al telefono</div>
+          <div class="menu-item-desc">Riso, ragù, mozzarella filante — la versione classica romana</div>
+        </div>
+        <span class="menu-item-price">€ 8</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Gran fritto Suburra</div>
+          <div class="menu-item-desc">Alici, baccalà, carciofi, zucchine, fiori di zucca — tutto fritto al momento</div>
+        </div>
+        <span class="menu-item-price">€ 16</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Alici panate con cuore di burrata</div>
+          <div class="menu-item-desc">Croccanti fuori, cremose dentro</div>
+        </div>
+        <span class="menu-item-price">€ 14</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Hummus di ceci con pane tostato</div>
+          <div class="menu-item-desc">Preparazione del giorno, olio extravergine e spezie</div>
+        </div>
+        <span class="menu-item-price">€ 9</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Tris di bruschette romane</div>
+          <div class="menu-item-desc">Pomodoro fresco, lardo e miele, ricotta e alici</div>
+        </div>
+        <span class="menu-item-price">€ 10</span>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <div class="menu-category-title">Primeros platos</div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Rigatoni alla carbonara</div>
+          <div class="menu-item-desc">Pasta fresca, guanciale, pecorino romano, tuorlo d'uovo</div>
+        </div>
+        <span class="menu-item-price">€ 16</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Tonnarelli cacio e pepe</div>
+          <div class="menu-item-desc">La versione classica, con pecorino di qualità</div>
+        </div>
+        <span class="menu-item-price">€ 15</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Rigatoni all'amatriciana</div>
+          <div class="menu-item-desc">Guanciale, pomodoro San Marzano, pecorino</div>
+        </div>
+        <span class="menu-item-price">€ 16</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Paccheri allo scarpariello</div>
+          <div class="menu-item-desc">Pomodorini, basilico, parmigiano, peperoncino</div>
+        </div>
+        <span class="menu-item-price">€ 15</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Bottoni di porchetta e cicoria</div>
+          <div class="menu-item-desc">Pasta ripiena del giorno con jus di arrosto</div>
+        </div>
+        <span class="menu-item-price">€ 18</span>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <div class="menu-category-title">Segundos platos</div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Baccalà alla catalana</div>
+          <div class="menu-item-desc">Con cebolla de Tropea, tomates, aceitunas y alcaparras</div>
+        </div>
+        <span class="menu-item-price">€ 18</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Pulled pork Suburra</div>
+          <div class="menu-item-desc">Maiale cotto lentamente, salsa BBQ artigianale, pane fatto in casa</div>
+        </div>
+        <span class="menu-item-price">€ 17</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Melanzane alla parmigiana</div>
+          <div class="menu-item-desc">Versione classica, cotta al forno ogni giorno</div>
+        </div>
+        <span class="menu-item-price">€ 14</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Piatto del giorno</div>
+          <div class="menu-item-desc">Chiedi al personale — cambia ogni giorno in base al mercato</div>
+        </div>
+        <span class="menu-item-price">—</span>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <div class="menu-category-title">Postres</div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Tiramisù della casa</div>
+          <div class="menu-item-desc">Receta clásica, preparado cada día</div>
+        </div>
+        <span class="menu-item-price">€ 7</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Pavlova di stagione</div>
+          <div class="menu-item-desc">Meringa, panna montata, frutta fresca</div>
+        </div>
+        <span class="menu-item-price">€ 8</span>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-left">
+          <div class="menu-item-name">Dolce del giorno</div>
+          <div class="menu-item-desc">Pregúntanos qué hemos preparado hoy</div>
+        </div>
+        <span class="menu-item-price">—</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COCKTAIL -->
+<section class="cocktail" id="cocktail">
+  <div class="cocktail-inner">
+    <span class="section-eyebrow" style="color:var(--gold);">El bar</span>
+    <h2 class="section-title light">Cócteles <em>signature</em></h2>
+    <p class="cocktail-intro">Ogni cocktail è pensato per avere una storia, non solo un nome. Alcuni sono ispirati al quartiere, altri ai sapori della cucina, altri ancora a ingredienti che difficilmente trovi altrove.</p>
+
+    <div class="cocktail-grid">
+      <div class="cocktail-card">
+        <div class="cocktail-tag">Signature</div>
+        <div class="cocktail-name">Basilico'</div>
+        <div class="cocktail-desc">Gin, basilico fresco, succo di limone, sciroppo di zucchero, soda. Fresco, erbaceo, estivo.</div>
+        <div class="cocktail-price">€ 12</div>
+      </div>
+      <div class="cocktail-card">
+        <div class="cocktail-tag">Signature</div>
+        <div class="cocktail-name">Suburra Negroni</div>
+        <div class="cocktail-desc">La nostra versione del classico — gin selezionato, vermouth di casa, Campari, scorza d'arancia.</div>
+        <div class="cocktail-price">€ 13</div>
+      </div>
+      <div class="cocktail-card">
+        <div class="cocktail-tag">Signature</div>
+        <div class="cocktail-name">Fleur de Nuit</div>
+        <div class="cocktail-desc">Vodka, liquore ai fiori di sambuco, lime, acqua tonica premium. Elegante e floreale.</div>
+        <div class="cocktail-price">€ 12</div>
+      </div>
+      <div class="cocktail-card">
+        <div class="cocktail-tag">Classici</div>
+        <div class="cocktail-name">Aperol Spritz · Campari · Americano</div>
+        <div class="cocktail-desc">I classici dell'aperitivo, preparati come si deve.</div>
+        <div class="cocktail-price">€ 9–11</div>
+      </div>
+      <div class="cocktail-card">
+        <div class="cocktail-tag">Gin &amp; Tonic</div>
+        <div class="cocktail-name">Selezione Gin &amp; Tonic</div>
+        <div class="cocktail-desc">Oltre 40 etichette di gin abbinate a toniche Fever-Tree selezionate. Chiedi il menù dedicato.</div>
+        <div class="cocktail-price">€ 12–16</div>
+      </div>
+      <div class="cocktail-card">
+        <div class="cocktail-tag">Analcolici</div>
+        <div class="cocktail-name">Mocktail del giorno</div>
+        <div class="cocktail-desc">Un cocktail analcolico preparato con gli stessi ingredienti freschi dei signature. Cambia ogni settimana.</div>
+        <div class="cocktail-price">€ 8</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEVANDE -->
+<section class="bevande" id="bevande">
+  <div class="bevande-inner">
+    <span class="section-eyebrow">La bodega</span>
+    <h2 class="section-title">Vinos <em>y bebidas</em></h2>
+
+    <div class="bevande-cols">
+      <div>
+        <div class="bev-section-title">Vini bianchi</div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Frascati Superiore DOC</div>
+            <div class="menu-item-desc">Vino dei Castelli Romani — calice / bottiglia</div>
+          </div>
+          <span class="menu-item-price">€ 5 / 22</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Vermentino di Sardegna</div>
+            <div class="menu-item-desc">Fresco, minerale — calice / bottiglia</div>
+          </div>
+          <span class="menu-item-price">€ 6 / 26</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Selezione del sommelier</div>
+            <div class="menu-item-desc">Chiedi cosa consigliamo oggi</div>
+          </div>
+          <span class="menu-item-price">—</span>
+        </div>
+
+        <div class="bev-section-title" style="margin-top:2rem;">Vini rossi</div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Cesanese del Piglio DOCG</div>
+            <div class="menu-item-desc">Il rosso laziale per eccellenza — calice / bottiglia</div>
+          </div>
+          <span class="menu-item-price">€ 6 / 26</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Montepulciano d'Abruzzo</div>
+            <div class="menu-item-desc">Strutturato, persistente — calice / bottiglia</div>
+          </div>
+          <span class="menu-item-price">€ 6 / 24</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="bev-section-title">Cervezas</div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Birra artigianale alla spina</div>
+            <div class="menu-item-desc">Rotazione mensile — chiedi la selezione del momento</div>
+          </div>
+          <span class="menu-item-price">€ 6</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Birra in bottiglia</div>
+            <div class="menu-item-desc">Selezione italiana e internazionale</div>
+          </div>
+          <span class="menu-item-price">€ 5–8</span>
+        </div>
+
+        <div class="bev-section-title" style="margin-top:2rem;">Analcolici e acqua</div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Acqua naturale / frizzante</div>
+          </div>
+          <span class="menu-item-price">€ 2</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Bibite e succhi</div>
+          </div>
+          <span class="menu-item-price">€ 4</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Caffè espresso</div>
+          </div>
+          <span class="menu-item-price">€ 2</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Amari e digestivi</div>
+            <div class="menu-item-desc">Selezione di amari italiani — chiedi al personale</div>
+          </div>
+          <span class="menu-item-price">€ 5–8</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="menu-cta">
+  <div>
+    <p class="menu-cta-text">¿Quieres venir a <em>probarlo en persona?</em></p>
+    <p class="menu-seasonal-note">El menú cambia estacionalmente — lo que lees aquí está siempre actualizado.</p>
+  </div>
+  <a href="https://pro.pns.sm/7h27rbg" class="btn-dark" target="_blank" rel="noopener">Reserva una mesa</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><img src="../logo.png" alt="Suburra 1930" class="footer-logo-img"></div>
+      <div class="footer-brand-sub">Cocina &amp; Liquori</div>
+      <p class="footer-brand-desc">Restaurante y cocktail bar en el Rione Monti desde 2015.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Menú</div>
+      <ul class="footer-links">
+        <li><a href="#cucina">Cocina</a></li>
+        <li><a href="#cocktail">Cócteles Signature</a></li>
+        <li><a href="#bevande">Bebidas</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">El local</div>
+      <ul class="footer-links">
+        <li><a href="chi-siamo.html">Quiénes somos</a></li>
+        <li><a href="eventi-privati.html">Eventos privados</a></li>
+        <li><a href="news.html">Noticias</a></li>
+        <li><a href="contatti.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacto</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Teléfono</span>
+        <span class="footer-contact-value"><a href="tel:+390648905713">06 4890 5713</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Dirección</span>
+        <span class="footer-contact-value">Piazza della Suburra 13/15<br>00184 Roma</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">Dopolavoro S.r.l. · CIF 12934681003 · © 2026 Suburra 1930</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/suburra1930/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Suburra1930" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d8273642" target="_blank" rel="noopener">TripAdvisor</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.menu-nav-tab');
+  const sections = ['cucina','cocktail','bevande'];
+  window.addEventListener('scroll', () => {
+    let current = 'cucina';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 140) current = id;
+    });
+    tabs.forEach(tab => {
+      tab.classList.toggle('active', tab.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+
+
+
+<script>
+(function(){
+var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');
+if(h&&m){h.addEventListener('click',function(){m.classList.toggle('open');});
+document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target))m.classList.remove('open');});}
+})();
+</script>
+</body>
+</html>

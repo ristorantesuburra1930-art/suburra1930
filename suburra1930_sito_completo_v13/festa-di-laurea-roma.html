@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Festa di laurea a Roma centro da Suburra 1930 — sala Leonina riservata, aperitivo e cena, a due passi dal Colosseo nel Rione Monti.">
+<title>Feste di Laurea · Suburra 1930</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>.has-dropdown{position:relative}.dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(26,22,18,.98);border:1px solid rgba(184,152,90,.25);border-top:2px solid var(--gold);list-style:none;min-width:200px;z-index:200;padding:.5rem 0}.has-dropdown:hover .dropdown{display:block}.dropdown a{display:block;padding:.6rem 1.2rem;font-size:.65rem!important;letter-spacing:.15em!important;color:rgba(245,240,232,.7)!important;white-space:nowrap}.dropdown a:hover{color:var(--gold-light)!important;background:rgba(184,152,90,.08)}
+.event-hero-img{width:100%;height:380px;object-fit:cover;display:block;filter:brightness(.5) saturate(.7)}
+.event-body{max-width:860px;margin:0 auto;padding:4rem 5rem 6rem}
+.event-lead{font-family:var(--serif);font-size:1.2rem;font-weight:300;line-height:1.85;color:var(--text-body);margin-bottom:2rem}
+.event-text{font-family:var(--sans);font-size:.82rem;font-weight:300;line-height:1.9;color:var(--text-body);margin-bottom:1.2rem}
+.event-features{margin:2rem 0;display:flex;flex-direction:column;gap:.7rem}
+.event-feature{display:flex;align-items:baseline;gap:.8rem;font-family:var(--sans);font-size:.78rem;font-weight:300;color:var(--text-muted)}
+.event-feature::before{content:"—";color:var(--gold);flex-shrink:0}
+.event-cta-box{background:var(--dark);padding:3rem;margin-top:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.event-cta-text{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--cream)}
+.event-cta-text em{font-style:italic;color:var(--gold-light)}
+.other-events{background:var(--cream-dark);padding:4rem 5rem}
+.other-events-inner{max-width:860px;margin:0 auto}
+.other-events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,152,90,.2);margin-top:2rem}
+.other-event-card{background:var(--cream);padding:2rem;text-decoration:none;display:flex;flex-direction:column;transition:background .2s}
+.other-event-card:hover{background:var(--gold-pale)}
+.other-event-icon{font-size:1.4rem;color:var(--gold);margin-bottom:1rem}
+.other-event-title{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:.5rem}
+.other-event-link{font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:auto;padding-top:1rem}
+@media(max-width:900px){.event-body{padding:2rem 1.5rem 4rem}.event-cta-box{flex-direction:column}.other-events{padding:3rem 1.5rem}.other-events-grid{grid-template-columns:1fr}}
+
+
+/* ── NAV RIGHT ── */
+
+
+.lang-switcher { display: flex; gap: 0.25rem; align-items: center; }
+
+
+
+/* ── MOBILE LANG ── */
+
+.mobile-lang 
+.mobile-lang 
+
+
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.lang-btn .flag { font-size: 1rem; line-height: 1; }
+.lang-btn 
+.lang-btn:hover {
+  background: rgba(184,152,90,0.15);
+  border-color: rgba(184,152,90,0.6);
+  color: var(--gold-light);
+}
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+/* mobile lang switcher inside hamburger menu */
+
+.mobile-lang 
+.mobile-lang .lang-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+}
+@media (max-width: 900px) {
+  .lang-switcher { display: none; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 88px;
+  background: rgba(26,22,18,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,152,90,0.25);
+}
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+.nav-logo-img:hover { opacity: 0.8; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── LANG SWITCHER ── */
+.lang-switcher { display: flex; gap: 4px; align-items: center; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid rgba(184,152,90,0.3);
+  background: rgba(26,22,18,0.5);
+  color: rgba(245,240,232,0.55);
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.flag-img {
+  width: 20px;
+  height: 14px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  object-fit: cover;
+}
+.lang-btn .lang-label { font-size: 0.6rem; }
+.lang-btn:hover { background: rgba(184,152,90,0.15); border-color: rgba(184,152,90,0.6); color: var(--gold-light); }
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.lang-btn.active .lang-label { color: var(--dark); }
+
+/* ── MOBILE MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.25s; }
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0; right: 0;
+  background: rgba(26,22,18,0.98);
+  border-top: 1px solid rgba(184,152,90,0.2);
+  padding: 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-item {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.8);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.1);
+  display: block;
+}
+.nav-mobile-item:last-child { border-bottom: none; }
+.nav-mobile-sub { padding-left: 1.2rem; font-size: 0.8rem; color: rgba(245,240,232,0.55); }
+.nav-mobile-cta {
+  margin-top: 1.2rem;
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 1rem;
+  text-decoration: none;
+}
+.mobile-lang {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.15);
+}
+.mobile-lang .lang-btn {
+  background: rgba(184,152,90,0.08);
+  border-color: rgba(184,152,90,0.2);
+  color: rgba(245,240,232,0.7);
+  font-size: 0.72rem;
+  padding: 6px 10px;
+}
+.mobile-lang .lang-btn.active { background: var(--gold); color: var(--dark); }
+.mobile-lang .flag-img { width: 22px; height: 15px; }
+.mobile-lang .lang-label { font-size: 0.68rem; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 1.2rem; height: 72px; }
+  .nav-logo-img { height: 46px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .lang-switcher { display: none; }
+  .nav-mobile-menu { top: 72px; }
+}
+
+/* ── GOLD TEXT: bold + slightly larger ── */
+.section-eyebrow,
+.hero-eyebrow,
+.page-hero-eyebrow,
+.menu-card-tag,
+.cocktail-tag,
+.news-card-cat,
+.news-card-date,
+.score-platform,
+.review-author,
+.orario-label,
+.footer-col-title,
+.footer-contact-label,
+.info-strip-text,
+.event-icon,
+.cap-label,
+.orari-block-label,
+.contact-block-label,
+.bev-section-title,
+.menu-category-title,
+.menu-subsection-title,
+.event-feature::before,
+.badge,
+.menu-item-price { font-weight: 700 !important; }
+
+.section-eyebrow { font-size: 0.73rem !important; }
+.page-hero-eyebrow { font-size: 0.73rem !important; }
+.hero-eyebrow { font-size: 0.73rem !important; }
+.menu-item-price { font-size: 1.05rem !important; }
+.footer-col-title { font-size: 0.73rem !important; }
+.footer-contact-label { font-size: 0.71rem !important; }
+
+/* ── FOOTER FONT SIZE BOOST ── */
+.footer-links a { font-size: 0.88rem !important; }
+.footer-brand-desc { font-size: 0.88rem !important; }
+.footer-contact-value { font-size: 1.05rem !important; }
+.footer-contact-value a { font-size: 1.05rem !important; }
+.footer-legal { font-size: 0.76rem !important; }
+.footer-social a { font-size: 0.74rem !important; font-weight: 700 !important; }
+
+</style>
+</head>
+<body>
+<script>
+function setLang(l,u){localStorage.setItem('suburra_lang',l);window.location.href=u;}
+(function(){
+  var p=window.location.pathname,c='it';
+  if(/\/en\//.test(p))c='en';else if(/\/es\//.test(p))c='es';else if(/\/fr\//.test(p))c='fr';
+  var s=localStorage.getItem('suburra_lang');
+  if(s&&s!==c){
+    var f=p.split('/').pop()||'index.html';
+    var b=window.location.href.replace(/[^\/]*$/,'').replace(/\/(en|es|fr)\/$/,'/');
+    window.location.replace(s==='it'?b+f:b+s+'/'+f);
+  }
+})();
+</script>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Suburra 1930" class="nav-logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li class="has-dropdown"><a href="menu.html">Menù</a>
+      <ul class="dropdown">
+        <li><a href="i-piatti-del-menu.html">Cucina</a></li>
+        <li><a href="menu-bevande.html">Bevande</a></li>
+        <li><a href="menu-cocktail-signature.html">Cocktail Signature</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="eventi-privati.html">Eventi privati</a>
+      <ul class="dropdown">
+        <li><a href="compleanno-a-roma.html">Compleanni</a></li>
+        <li><a href="festa-di-laurea-roma.html">Lauree</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cene aziendali</a></li>
+      </ul>
+    </li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher"><a href="festa-di-laurea-roma.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">IT</span></a><a href="en/festa-di-laurea-roma.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">EN</span></a><a href="es/festa-di-laurea-roma.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">ES</span></a><a href="fr/festa-di-laurea-roma.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">FR</span></a></div>
+    <a href="https://pro.pns.sm/7h27rbg" class="nav-cta" target="_blank" rel="noopener">Prenota</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item">Home</a>
+  <a href="chi-siamo.html" class="nav-mobile-item">Chi siamo</a>
+  <a href="i-piatti-del-menu.html" class="nav-mobile-item nav-mobile-sub">— Cucina</a>
+  <a href="menu-bevande.html" class="nav-mobile-item nav-mobile-sub">— Bevande</a>
+  <a href="menu-cocktail-signature.html" class="nav-mobile-item nav-mobile-sub">— Cocktail Signature</a>
+  <a href="compleanno-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Compleanni</a>
+  <a href="festa-di-laurea-roma.html" class="nav-mobile-item nav-mobile-sub">— Lauree</a>
+  <a href="cena-aziendale-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Cene aziendali</a>
+  <a href="news.html" class="nav-mobile-item">News</a>
+  <a href="contatti.html" class="nav-mobile-item">Contatti</a>
+  <div class="mobile-lang"><a href="festa-di-laurea-roma.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">Italiano</span></a><a href="en/festa-di-laurea-roma.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">English</span></a><a href="es/festa-di-laurea-roma.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">Español</span></a><a href="fr/festa-di-laurea-roma.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">Français</span></a></div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Eventi privati</span>
+  <h1 class="page-hero-title">Festa di <em>laurea</em> a Roma</h1>
+  <p class="page-hero-sub">Sala Leonina · Aperitivo + Cena · Rione Monti</p>
+</div>
+<img src="https://suburra1930.it/wp-content/uploads/2024/07/448973762_957900516346900_4989893778447137527_n.jpg" alt="Festa di laurea Suburra 1930" class="event-hero-img" loading="eager">
+<div class="event-body">
+  <p class="event-lead">Anni di studio, un giorno solo per festeggiare. Suburra 1930 è il ristorante e cocktail bar in centro a Roma ideale per la tua festa di laurea — elegante ma non pretenzioso, centrale, con una cucina che non delude.</p>
+  <p class="event-text">Che tu abbia in mente una cena di laurea o un aperitivo per brindare al traguardo raggiunto, Suburra 1930 è la soluzione più originale e comoda. Siamo in pieno centro, in Piazza della Suburra nel cuore del Rione Monti, a due passi dal Colosseo.</p>
+<p class="event-text">La sala Leonina, al piano superiore, è perfetta per gruppi di 15–25 persone che vogliono una serata più raccolta e privata. Per gruppi più numerosi utilizziamo la sala principale o il dehors.</p>
+  <div class="event-features">
+<div class="event-feature">Sala Leonina privata per 15–25 ospiti</div>
+<div class="event-feature">Pacchetto aperitivo + cena con menù fisso o à la carte</div>
+<div class="event-feature">Cocktail di benvenuto al bancone del bar</div>
+<div class="event-feature">Possibilità di portare torta e gadget personalizzati</div>
+<div class="event-feature">Schermo per proiezione foto e video</div>
+<div class="event-feature">Fatturazione possibile</div>
+  </div>
+  <div class="event-cta-box">
+    <p class="event-cta-text">Contattaci per <em>disponibilità e preventivo</em></p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="tel:+390648905713" class="btn-primary">06 4890 5713</a>
+      <a href="contatti.html" class="btn-ghost" style="color:rgba(245,240,232,.6);border-color:rgba(245,240,232,.2);">Modulo contatti</a>
+    </div>
+  </div>
+</div>
+<div class="other-events">
+  <div class="other-events-inner">
+    <span class="section-eyebrow">Altre occasioni</span>
+    <h2 class="section-title" style="font-size:1.8rem;">Organizziamo anche</h2>
+    <div class="other-events-grid">
+<a href="compleanno-a-roma.html" class="other-event-card"><div class="other-event-icon">🎂</div><div class="other-event-title">Compleanni</div><span class="other-event-link">Scopri →</span></a>
+<a href="cena-aziendale-a-roma.html" class="other-event-card"><div class="other-event-icon">🤝</div><div class="other-event-title">Cene Aziendali</div><span class="other-event-link">Scopri →</span></a>
+<a href="contatti.html" class="other-event-card"><div class="other-event-icon">📍</div><div class="other-event-title">Contatti</div><span class="other-event-link">Scopri →</span></a>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><img src="logo.png" alt="Suburra 1930" class="footer-logo-img"></div>
+      
+      <p class="footer-brand-desc">Ristorante e cocktail bar nel Rione Monti dal 2015.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Menù</div>
+      <ul class="footer-links">
+        <li><a href="i-piatti-del-menu.html">Cucina</a></li>
+        <li><a href="menu-bevande.html">Bevande</a></li>
+        <li><a href="menu-cocktail-signature.html">Cocktail Signature</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Il locale</div>
+      <ul class="footer-links">
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="compleanno-a-roma.html">Compleanni</a></li>
+        <li><a href="festa-di-laurea-roma.html">Feste di laurea</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cene aziendali</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contatti</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Telefono</span>
+        <span class="footer-contact-value"><a href="tel:+390648905713">06 4890 5713</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Indirizzo</span>
+        <span class="footer-contact-value">Piazza della Suburra 13/15<br>00184 Roma</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">Dopolavoro S.r.l. · P. IVA 12934681003 · © 2026 Suburra 1930 · <a href="#">Privacy</a> · <a href="#">Cookie</a></span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/suburra1930/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Suburra1930" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d8273642" target="_blank" rel="noopener">TripAdvisor</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+(function(){
+var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');
+if(h&&m){h.addEventListener('click',function(){m.classList.toggle('open');});
+document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target))m.classList.remove('open');});}
+})();
+</script>
+</body>
+</html>

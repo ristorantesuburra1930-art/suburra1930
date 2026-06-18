@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I cocktail signature di Suburra 1930 — creazioni originali del nostro bar nel Rione Monti, Roma.">
+<title>Cocktail Signature · Suburra 1930</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+.has-dropdown{position:relative}.dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(26,22,18,.98);border:1px solid rgba(184,152,90,.25);border-top:2px solid var(--gold);list-style:none;min-width:200px;z-index:200;padding:.5rem 0}.has-dropdown:hover .dropdown{display:block}.dropdown a{display:block;padding:.6rem 1.2rem;font-size:.65rem!important;letter-spacing:.15em!important;color:rgba(245,240,232,.7)!important;white-space:nowrap}.dropdown a:hover{color:var(--gold-light)!important;background:rgba(184,152,90,.08)}
+.cocktail-page { max-width: 1100px; margin: 0 auto; padding: 4rem 5rem 6rem; }
+.cocktail-intro { font-family: var(--serif); font-size: 1.15rem; font-weight: 300; font-style: italic; color: var(--text-muted); max-width: 55ch; margin-bottom: 3rem; line-height: 1.8; }
+.cocktail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(184,152,90,.15); margin-bottom: 4rem; }
+.cocktail-card { background: var(--dark-mid); padding: 2.5rem 2rem; transition: background .2s; }
+.cocktail-card:hover { background: var(--dark-soft); }
+.cocktail-tag { font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+.cocktail-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--cream); margin-bottom: .5rem; line-height: 1.2; }
+.cocktail-desc { font-family: var(--sans); font-size: .72rem; font-weight: 300; color: rgba(245,240,232,.5); line-height: 1.75; margin-bottom: 1rem; }
+.cocktail-price { font-family: var(--serif); font-size: 1rem; color: var(--gold-light); }
+.cocktail-note { background: var(--dark); border: 1px solid rgba(184,152,90,.2); padding: 2rem 2.5rem; font-family: var(--serif); font-style: italic; font-size: .95rem; color: rgba(245,240,232,.5); text-align: center; margin-bottom: 3rem; }
+@media(max-width:900px) { .cocktail-page { padding: 2rem 1.5rem 4rem; } .cocktail-grid { grid-template-columns: 1fr; } }
+
+
+/* ── NAV RIGHT ── */
+
+
+.lang-switcher { display: flex; gap: 0.25rem; align-items: center; }
+
+
+
+/* ── MOBILE LANG ── */
+
+.mobile-lang 
+.mobile-lang 
+
+
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.lang-btn .flag { font-size: 1rem; line-height: 1; }
+.lang-btn 
+.lang-btn:hover {
+  background: rgba(184,152,90,0.15);
+  border-color: rgba(184,152,90,0.6);
+  color: var(--gold-light);
+}
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+/* mobile lang switcher inside hamburger menu */
+
+.mobile-lang 
+.mobile-lang .lang-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+}
+@media (max-width: 900px) {
+  .lang-switcher { display: none; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 88px;
+  background: rgba(26,22,18,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,152,90,0.25);
+}
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+.nav-logo-img:hover { opacity: 0.8; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── LANG SWITCHER ── */
+.lang-switcher { display: flex; gap: 4px; align-items: center; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid rgba(184,152,90,0.3);
+  background: rgba(26,22,18,0.5);
+  color: rgba(245,240,232,0.55);
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.flag-img {
+  width: 20px;
+  height: 14px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  object-fit: cover;
+}
+.lang-btn .lang-label { font-size: 0.6rem; }
+.lang-btn:hover { background: rgba(184,152,90,0.15); border-color: rgba(184,152,90,0.6); color: var(--gold-light); }
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.lang-btn.active .lang-label { color: var(--dark); }
+
+/* ── MOBILE MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.25s; }
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0; right: 0;
+  background: rgba(26,22,18,0.98);
+  border-top: 1px solid rgba(184,152,90,0.2);
+  padding: 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-item {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.8);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.1);
+  display: block;
+}
+.nav-mobile-item:last-child { border-bottom: none; }
+.nav-mobile-sub { padding-left: 1.2rem; font-size: 0.8rem; color: rgba(245,240,232,0.55); }
+.nav-mobile-cta {
+  margin-top: 1.2rem;
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 1rem;
+  text-decoration: none;
+}
+.mobile-lang {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.15);
+}
+.mobile-lang .lang-btn {
+  background: rgba(184,152,90,0.08);
+  border-color: rgba(184,152,90,0.2);
+  color: rgba(245,240,232,0.7);
+  font-size: 0.72rem;
+  padding: 6px 10px;
+}
+.mobile-lang .lang-btn.active { background: var(--gold); color: var(--dark); }
+.mobile-lang .flag-img { width: 22px; height: 15px; }
+.mobile-lang .lang-label { font-size: 0.68rem; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 1.2rem; height: 72px; }
+  .nav-logo-img { height: 46px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .lang-switcher { display: none; }
+  .nav-mobile-menu { top: 72px; }
+}
+
+/* ── GOLD TEXT: bold + slightly larger ── */
+.section-eyebrow,
+.hero-eyebrow,
+.page-hero-eyebrow,
+.menu-card-tag,
+.cocktail-tag,
+.news-card-cat,
+.news-card-date,
+.score-platform,
+.review-author,
+.orario-label,
+.footer-col-title,
+.footer-contact-label,
+.info-strip-text,
+.event-icon,
+.cap-label,
+.orari-block-label,
+.contact-block-label,
+.bev-section-title,
+.menu-category-title,
+.menu-subsection-title,
+.event-feature::before,
+.badge,
+.menu-item-price { font-weight: 700 !important; }
+
+.section-eyebrow { font-size: 0.73rem !important; }
+.page-hero-eyebrow { font-size: 0.73rem !important; }
+.hero-eyebrow { font-size: 0.73rem !important; }
+.menu-item-price { font-size: 1.05rem !important; }
+.footer-col-title { font-size: 0.73rem !important; }
+.footer-contact-label { font-size: 0.71rem !important; }
+
+/* ── FOOTER FONT SIZE BOOST ── */
+.footer-links a { font-size: 0.88rem !important; }
+.footer-brand-desc { font-size: 0.88rem !important; }
+.footer-contact-value { font-size: 1.05rem !important; }
+.footer-contact-value a { font-size: 1.05rem !important; }
+.footer-legal { font-size: 0.76rem !important; }
+.footer-social a { font-size: 0.74rem !important; font-weight: 700 !important; }
+
+</style>
+</head>
+<body>
+<script>
+function setLang(l,u){localStorage.setItem('suburra_lang',l);window.location.href=u;}
+(function(){
+  var p=window.location.pathname,c='it';
+  if(/\/en\//.test(p))c='en';else if(/\/es\//.test(p))c='es';else if(/\/fr\//.test(p))c='fr';
+  var s=localStorage.getItem('suburra_lang');
+  if(s&&s!==c){
+    var f=p.split('/').pop()||'index.html';
+    var b=window.location.href.replace(/[^\/]*$/,'').replace(/\/(en|es|fr)\/$/,'/');
+    window.location.replace(s==='it'?b+f:b+s+'/'+f);
+  }
+})();
+</script>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Suburra 1930" class="nav-logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li class="has-dropdown"><a href="menu.html">Menù</a>
+      <ul class="dropdown">
+        <li><a href="i-piatti-del-menu.html">Cucina</a></li>
+        <li><a href="menu-bevande.html">Bevande</a></li>
+        <li><a href="menu-cocktail-signature.html">Cocktail Signature</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="eventi-privati.html">Eventi privati</a>
+      <ul class="dropdown">
+        <li><a href="compleanno-a-roma.html">Compleanni</a></li>
+        <li><a href="festa-di-laurea-roma.html">Lauree</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cene aziendali</a></li>
+      </ul>
+    </li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher"><a href="menu-cocktail-signature.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">IT</span></a><a href="en/menu-cocktail-signature.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">EN</span></a><a href="es/menu-cocktail-signature.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">ES</span></a><a href="fr/menu-cocktail-signature.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">FR</span></a></div>
+    <a href="https://pro.pns.sm/7h27rbg" class="nav-cta" target="_blank" rel="noopener">Prenota</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item">Home</a>
+  <a href="chi-siamo.html" class="nav-mobile-item">Chi siamo</a>
+  <a href="i-piatti-del-menu.html" class="nav-mobile-item nav-mobile-sub">— Cucina</a>
+  <a href="menu-bevande.html" class="nav-mobile-item nav-mobile-sub">— Bevande</a>
+  <a href="menu-cocktail-signature.html" class="nav-mobile-item nav-mobile-sub">— Cocktail Signature</a>
+  <a href="compleanno-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Compleanni</a>
+  <a href="festa-di-laurea-roma.html" class="nav-mobile-item nav-mobile-sub">— Lauree</a>
+  <a href="cena-aziendale-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Cene aziendali</a>
+  <a href="news.html" class="nav-mobile-item">News</a>
+  <a href="contatti.html" class="nav-mobile-item">Contatti</a>
+  <div class="mobile-lang"><a href="menu-cocktail-signature.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">Italiano</span></a><a href="en/menu-cocktail-signature.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">English</span></a><a href="es/menu-cocktail-signature.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">Español</span></a><a href="fr/menu-cocktail-signature.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">Français</span></a></div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+<div class="page-hero" style="background:var(--dark);">
+  <span class="page-hero-eyebrow">Il bar</span>
+  <h1 class="page-hero-title">Cocktail <em>signature</em></h1>
+  <p class="page-hero-sub">Creazioni originali del nostro barman</p>
+</div>
+<img src="https://suburra1930.it/wp-content/uploads/2022/02/5R6A6131-scaled.jpg" alt="Cocktail bar Suburra 1930" class="page-hero-img" loading="eager">
+
+<div class="cocktail-page">
+  <p class="cocktail-intro">Ogni cocktail nasce da una storia. Alcuni sono ispirati al quartiere, altri ai sapori della cucina, altri ancora a viaggi e ingredienti che difficilmente trovi altrove. Tutti a 12&euro;.</p>
+
+  <div class="cocktail-grid">
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Suburra</div>
+      <div class="cocktail-desc">Vodka, basilico, sciroppo homemade zenzero e lime, succo di lime, albume pastorizzato, estratto homemade al peperoncino e pepe</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Basilico'</div>
+      <div class="cocktail-desc">Gin, sciroppo al frutto della passione, ananas fresco, foglie di basilico, succo di limone e sciroppo di zucchero</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Cucumber Tonic</div>
+      <div class="cocktail-desc">Vodka, tonica, pestato di cetriolo, lime e pepe</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Litchi Martini</div>
+      <div class="cocktail-desc">Vodka, liquore di litchi, succo di lime, sciroppo di zucchero e sciroppo di litchi</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Violet Night</div>
+      <div class="cocktail-desc">Rum bianco, Bitter Campari, Blue Curaçao, vermouth bianco, sciroppo di granatina</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Whisky Cooler</div>
+      <div class="cocktail-desc">Whisky, pestato di arance, succo di lime, sciroppo di zucchero, ginger ale, liquore homemade di arance, caffè e rosmarino</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Honey Moon</div>
+      <div class="cocktail-desc">Bourbon whisky, premix di miele, succo di limone</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">Mexican Sour</div>
+      <div class="cocktail-desc">Mezcal, estratto homemade al peperoncino, succo di lime, sciroppo di zucchero e sale al mais tostato</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Signature</div>
+      <div class="cocktail-name">L'Age d'Or</div>
+      <div class="cocktail-desc">Cognac, Disaronno, twist d'arancia</div>
+      <div class="cocktail-price">€ 12</div>
+    </div>
+    <div class="cocktail-card">
+      <div class="cocktail-tag">Gin &amp; Tonic</div>
+      <div class="cocktail-name">Selezione Gin &amp; Tonic</div>
+      <div class="cocktail-desc">Oltre 40 etichette di gin abbinate a toniche Fever-Tree selezionate. Chiedi il menù dedicato al personale.</div>
+      <div class="cocktail-price">€ 12 – 16</div>
+    </div>
+  </div>
+
+  <div class="cocktail-note">I cocktail signature possono variare stagionalmente — il barman è sempre disponibile per suggerimenti e personalizzazioni.</div>
+
+  <div style="text-align:center;">
+    <a href="https://pro.pns.sm/7h27rbg" class="btn-primary" target="_blank" rel="noopener">Prenota un tavolo</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><img src="logo.png" alt="Suburra 1930" class="footer-logo-img"></div>
+      
+      <p class="footer-brand-desc">Ristorante e cocktail bar nel Rione Monti dal 2015.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Menù</div>
+      <ul class="footer-links">
+        <li><a href="i-piatti-del-menu.html">Cucina</a></li>
+        <li><a href="menu-bevande.html">Bevande</a></li>
+        <li><a href="menu-cocktail-signature.html">Cocktail Signature</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Il locale</div>
+      <ul class="footer-links">
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="compleanno-a-roma.html">Compleanni</a></li>
+        <li><a href="festa-di-laurea-roma.html">Feste di laurea</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cene aziendali</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contatti</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Telefono</span>
+        <span class="footer-contact-value"><a href="tel:+390648905713">06 4890 5713</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Indirizzo</span>
+        <span class="footer-contact-value">Piazza della Suburra 13/15<br>00184 Roma</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">Dopolavoro S.r.l. · P. IVA 12934681003 · © 2026 Suburra 1930 · <a href="#">Privacy</a> · <a href="#">Cookie</a></span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/suburra1930/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Suburra1930" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d8273642" target="_blank" rel="noopener">TripAdvisor</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+(function(){
+var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');
+if(h&&m){h.addEventListener('click',function(){m.classList.toggle('open');});
+document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target))m.classList.remove('open');});}
+})();
+</script>
+</body>
+</html>
