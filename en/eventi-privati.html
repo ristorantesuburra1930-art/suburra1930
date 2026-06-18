@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Birthdays, feste di laurea e cene aziendali da Suburra 1930 — sala privata nel Rione Monti, Roma.">
+<title>Private Events · Suburra 1930</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css">
+<style>
+.event-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.event-section.dark-bg { background: var(--dark); }
+.event-section-img { overflow: hidden; position: relative; }
+.event-section-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.8) saturate(0.8); }
+.event-section-content {
+  padding: 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+}
+.event-section-content.dark {
+  background: var(--dark-mid);
+}
+.event-section.reverse { direction: rtl; }
+.event-section.reverse > * { direction: ltr; }
+
+.event-text {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-body);
+  margin-bottom: 1.2rem;
+}
+.event-text.light { color: rgba(245,240,232,0.65); }
+
+.event-features {
+  margin: 1.5rem 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.event-feature {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+.event-feature.light { color: rgba(245,240,232,0.5); }
+.event-feature::before {
+  content: '—';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.capacity-strip {
+  background: var(--gold);
+  padding: 3rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(26,22,18,0.1);
+}
+.cap-item {
+  padding: 1rem 0;
+  border-right: 1px solid rgba(26,22,18,0.15);
+}
+.cap-item:last-child { border-right: none; }
+.cap-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(26,22,18,0.5); margin-bottom: 0.4rem; }
+.cap-value { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--dark); line-height: 1.1; }
+.cap-detail { font-family: var(--sans); font-size: 0.85rem; font-weight: 300; color: rgba(26,22,18,0.6); margin-top: 0.2rem; }
+
+.contact-band {
+  background: var(--dark);
+  padding: 5rem;
+  text-align: center;
+}
+.contact-band-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+}
+.contact-band-title em { font-style: italic; color: var(--gold-light); }
+.contact-band-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(245,240,232,0.4);
+  margin-bottom: 2.5rem;
+}
+.contact-methods {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.5rem 2.5rem;
+  border: 1px solid rgba(184,152,90,0.25);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  min-width: 180px;
+}
+.contact-method:hover { background: rgba(184,152,90,0.08); border-color: rgba(184,152,90,0.5); }
+.contact-method-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); }
+.contact-method-value { font-family: var(--serif); font-size: 1rem; font-weight: 300; color: rgba(245,240,232,0.7); }
+
+@media (max-width: 900px) {
+  .event-section { grid-template-columns: 1fr; }
+  .event-section-img { height: 260px; }
+  .event-section-content { padding: 3rem 1.5rem; }
+  .event-section.reverse { direction: ltr; }
+  .capacity-strip { grid-template-columns: 1fr 1fr; padding: 2rem 1.5rem; gap: 1rem; }
+  .cap-item { border-right: none; padding: 0.5rem 0; }
+  .contact-band { padding: 3rem 1.5rem; }
+}
+.has-dropdown{position:relative}.dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(26,22,18,.98);border:1px solid rgba(184,152,90,.25);border-top:2px solid var(--gold);list-style:none;min-width:200px;z-index:200;padding:.5rem 0}.has-dropdown:hover .dropdown{display:block}.dropdown a{display:block;padding:.6rem 1.2rem;font-size:.65rem!important;letter-spacing:.15em!important;color:rgba(245,240,232,.7)!important;white-space:nowrap}.dropdown a:hover{color:var(--gold-light)!important;background:rgba(184,152,90,.08)}
+
+
+/* ── NAV RIGHT ── */
+
+
+.lang-switcher { display: flex; gap: 0.25rem; align-items: center; }
+
+
+
+/* ── MOBILE LANG ── */
+
+.mobile-lang 
+.mobile-lang 
+
+
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.lang-btn .flag { font-size: 1rem; line-height: 1; }
+.lang-btn 
+.lang-btn:hover {
+  background: rgba(184,152,90,0.15);
+  border-color: rgba(184,152,90,0.6);
+  color: var(--gold-light);
+}
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+/* mobile lang switcher inside hamburger menu */
+
+.mobile-lang 
+.mobile-lang .lang-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+}
+@media (max-width: 900px) {
+  .lang-switcher { display: none; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 88px;
+  background: rgba(26,22,18,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,152,90,0.25);
+}
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+.nav-logo-img:hover { opacity: 0.8; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── LANG SWITCHER ── */
+.lang-switcher { display: flex; gap: 4px; align-items: center; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid rgba(184,152,90,0.3);
+  background: rgba(26,22,18,0.5);
+  color: rgba(245,240,232,0.55);
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.flag-img {
+  width: 20px;
+  height: 14px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  object-fit: cover;
+}
+.lang-btn .lang-label { font-size: 0.6rem; }
+.lang-btn:hover { background: rgba(184,152,90,0.15); border-color: rgba(184,152,90,0.6); color: var(--gold-light); }
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.lang-btn.active .lang-label { color: var(--dark); }
+
+/* ── MOBILE MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.25s; }
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0; right: 0;
+  background: rgba(26,22,18,0.98);
+  border-top: 1px solid rgba(184,152,90,0.2);
+  padding: 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-item {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.8);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.1);
+  display: block;
+}
+.nav-mobile-item:last-child { border-bottom: none; }
+.nav-mobile-sub { padding-left: 1.2rem; font-size: 0.8rem; color: rgba(245,240,232,0.55); }
+.nav-mobile-cta {
+  margin-top: 1.2rem;
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 1rem;
+  text-decoration: none;
+}
+.mobile-lang {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.15);
+}
+.mobile-lang .lang-btn {
+  background: rgba(184,152,90,0.08);
+  border-color: rgba(184,152,90,0.2);
+  color: rgba(245,240,232,0.7);
+  font-size: 0.72rem;
+  padding: 6px 10px;
+}
+.mobile-lang .lang-btn.active { background: var(--gold); color: var(--dark); }
+.mobile-lang .flag-img { width: 22px; height: 15px; }
+.mobile-lang .lang-label { font-size: 0.68rem; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 1.2rem; height: 72px; }
+  .nav-logo-img { height: 46px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .lang-switcher { display: none; }
+  .nav-mobile-menu { top: 72px; }
+}
+
+/* ── GOLD TEXT: bold + slightly larger ── */
+.section-eyebrow,
+.hero-eyebrow,
+.page-hero-eyebrow,
+.menu-card-tag,
+.cocktail-tag,
+.news-card-cat,
+.news-card-date,
+.score-platform,
+.review-author,
+.orario-label,
+.footer-col-title,
+.footer-contact-label,
+.info-strip-text,
+.event-icon,
+.cap-label,
+.orari-block-label,
+.contact-block-label,
+.bev-section-title,
+.menu-category-title,
+.menu-subsection-title,
+.event-feature::before,
+.badge,
+.menu-item-price { font-weight: 700 !important; }
+
+.section-eyebrow { font-size: 0.73rem !important; }
+.page-hero-eyebrow { font-size: 0.73rem !important; }
+.hero-eyebrow { font-size: 0.73rem !important; }
+.menu-item-price { font-size: 1.05rem !important; }
+.footer-col-title { font-size: 0.73rem !important; }
+.footer-contact-label { font-size: 0.71rem !important; }
+
+/* ── FOOTER FONT SIZE BOOST ── */
+.footer-links a { font-size: 0.88rem !important; }
+.footer-brand-desc { font-size: 0.88rem !important; }
+.footer-contact-value { font-size: 1.05rem !important; }
+.footer-contact-value a { font-size: 1.05rem !important; }
+.footer-legal { font-size: 0.76rem !important; }
+.footer-social a { font-size: 0.74rem !important; font-weight: 700 !important; }
+
+</style>
+</head>
+<body>
+<script>
+function setLang(l,u){localStorage.setItem('suburra_lang',l);window.location.href=u;}
+(function(){
+  var p=window.location.pathname,c='it';
+  if(/\/en\//.test(p))c='en';else if(/\/es\//.test(p))c='es';else if(/\/fr\//.test(p))c='fr';
+  var s=localStorage.getItem('suburra_lang');
+  if(s&&s!==c){
+    var f=p.split('/').pop()||'index.html';
+    var b=window.location.href.replace(/[^\/]*$/,'').replace(/\/(en|es|fr)\/$/,'/');
+    window.location.replace(s==='it'?b+f:b+s+'/'+f);
+  }
+})();
+</script>
+
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="../logo.png" alt="Suburra 1930" class="nav-logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="chi-siamo.html">About us</a></li>
+    <li class="has-dropdown"><a href="menu.html">Menu</a>
+      <ul class="dropdown">
+        <li><a href="i-piatti-del-menu.html">Food</a></li>
+        <li><a href="menu-bevande.html">Drinks</a></li>
+        <li><a href="menu-cocktail-signature.html">Signature Cocktails</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="eventi-privati.html">Private events</a>
+      <ul class="dropdown">
+        <li><a href="compleanno-a-roma.html">Birthdays</a></li>
+        <li><a href="festa-di-laurea-roma.html">Graduation</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Corporate dinners</a></li>
+      </ul>
+    </li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contatti.html">Contacts</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher"><a href="eventi-privati.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">IT</span></a><a href="en/eventi-privati.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">EN</span></a><a href="es/eventi-privati.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">ES</span></a><a href="fr/eventi-privati.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">FR</span></a></div>
+    <a href="https://pro.pns.sm/7h27rbg" class="nav-cta" target="_blank" rel="noopener">Book now</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item">Home</a>
+  <a href="chi-siamo.html" class="nav-mobile-item">About us</a>
+  <a href="i-piatti-del-menu.html" class="nav-mobile-item nav-mobile-sub">— Food</a>
+  <a href="menu-bevande.html" class="nav-mobile-item nav-mobile-sub">— Drinks</a>
+  <a href="menu-cocktail-signature.html" class="nav-mobile-item nav-mobile-sub">— Signature Cocktails</a>
+  <a href="compleanno-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Birthdays</a>
+  <a href="festa-di-laurea-roma.html" class="nav-mobile-item nav-mobile-sub">— Graduation</a>
+  <a href="cena-aziendale-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Corporate dinners</a>
+  <a href="news.html" class="nav-mobile-item">News</a>
+  <a href="contatti.html" class="nav-mobile-item">Contacts</a>
+  <div class="mobile-lang"><a href="eventi-privati.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">Italiano</span></a><a href="en/eventi-privati.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">English</span></a><a href="es/eventi-privati.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">Español</span></a><a href="fr/eventi-privati.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">Français</span></a></div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Book now</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Book now</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Book now</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Book now</a>
+</div>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Celebrate with us</span>
+  <h1 class="page-hero-title">Private <em>events</em></h1>
+  <p class="page-hero-sub">Birthdays · Lauree · Corporate dinners</p>
+</div>
+<img
+  src="https://suburra1930.it/wp-content/uploads/2024/06/Festa-Nipote-Mauro-Suburra-193020-1.jpg"
+  alt="Festa privata in sala Suburra 1930"
+  class="page-hero-img"
+  loading="eager"
+>
+
+<!-- CAPACITY STRIP -->
+<div class="capacity-strip">
+  <div class="cap-item">
+    <div class="cap-label">Capienza sala interna</div>
+    <div class="cap-value">up to 60</div>
+    <div class="cap-detail">people for private events</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-label">Dehors esterno</div>
+    <div class="cap-value">+ 40</div>
+    <div class="cap-detail">seats on the terrace</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-label">Sala Leonina</div>
+    <div class="cap-value">fino a 25</div>
+    <div class="cap-detail">separate private room</div>
+  </div>
+  <div class="cap-item">
+    <div class="cap-label">Posizione</div>
+    <div class="cap-value">Rione Monti</div>
+    <div class="cap-detail">2 minutes from the Colosseum</div>
+  </div>
+</div>
+
+<!-- COMPLEANNI -->
+<section class="event-section" id="compleanni">
+  <div class="event-section-img">
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2019/01/322729394_1172672630025137_5180554854995743692_n-1-1.jpg"
+      alt="Compleanno da Suburra 1930"
+      loading="lazy"
+    >
+  </div>
+  <div class="event-section-content">
+    <span class="section-eyebrow">For your special day</span>
+    <h2 class="section-title">Birthdays <em>da ricordare</em></h2>
+    <p class="event-text">A big table, a beautiful place, loved ones. It sounds simple — but finding it in Rome's historic centre, without breaking the bank, is not so straightforward.</p>
+    <p class="event-text">At Suburra 1930 we organise birthdays for 10 to 60 guests. We take care of everything: custom menu, cake, decorations if you like, welcome cocktail.</p>
+    <div class="event-features">
+      <div class="event-feature">Private room available on request</div>
+      <div class="event-feature">Dedicated menu with choice of starter, first course, main and dessert</div>
+      <div class="event-feature">Cocktails di benvenuto incluso su prenotazione di gruppo</div>
+      <div class="event-feature">Personalised cake — we coordinate with external pastry shops</div>
+      <div class="event-feature">Option to personalise table decorations</div>
+    </div>
+    <a href="contatti.html" class="btn-ghost">Check availability</a>
+  </div>
+</section>
+
+<!-- LAUREE -->
+<section class="event-section reverse" id="lauree">
+  <div class="event-section-img">
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2019/01/suburra-locale-1200x800-9-1.jpg"
+      alt="Graduation party Suburra 1930"
+      loading="lazy"
+    >
+  </div>
+  <div class="event-section-content" style="background:var(--cream-dark);">
+    <span class="section-eyebrow">Your milestone</span>
+    <h2 class="section-title">Graduation <em>parties</em></h2>
+    <p class="event-text">Years of study, one day to celebrate. You need a place that lives up to the occasion — beautiful, central, with food that doesn't disappoint and service you won't regret.</p>
+    <p class="event-text">We organise graduation parties all year round. The Sala Leonina, on the upper floor, is perfect for groups of 15–25 who want a more intimate and private evening.</p>
+    <div class="event-features">
+      <div class="event-feature">Private Sala Leonina for 15–25 guests</div>
+      <div class="event-feature">Aperitivo + dinner package with set menu</div>
+      <div class="event-feature">Cocktails di benvenuto al bancone del bar</div>
+      <div class="event-feature">Option to bring personalised cake and gifts</div>
+      <div class="event-feature">Nearby parking — we recommend Via Labicana car park</div>
+    </div>
+    <a href="contatti.html" class="btn-ghost">Request a quote</a>
+  </div>
+</section>
+
+<!-- AZIENDALI -->
+<section class="event-section" id="aziendali">
+  <div class="event-section-img">
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2019/01/suburra-locale-1200x800-7-1.jpg"
+      alt="Dinner aziendale Suburra 1930"
+      loading="lazy"
+    >
+  </div>
+  <div class="event-section-content">
+    <span class="section-eyebrow">For business occasions</span>
+    <h2 class="section-title">Corporate <em>dinners</em></h2>
+    <p class="event-text">A dinner with clients, a team lunch, an end-of-year event. The venue is part of the message — and a square from 100 AD steps from the Colosseum says something very specific.</p>
+    <p class="event-text">We offer flexible solutions: from a fully private room to a dedicated table in the main dining room, with set menu or à la carte, with or without personalised catering service.</p>
+    <div class="event-features">
+      <div class="event-feature">Private room for up to 60 people</div>
+      <div class="event-feature">Corporate set menu with 3 or 4 courses</div>
+      <div class="event-feature">Wine and spirits selection on request</div>
+      <div class="event-feature">Corporate invoicing available</div>
+      <div class="event-feature">Book nowzione con sopralluogo su appuntamento</div>
+    </div>
+    <a href="contatti.html" class="btn-ghost">Contact us for a quote</a>
+  </div>
+</section>
+
+<!-- CONTATTO -->
+<div class="contact-band">
+  <h2 class="contact-band-title">We take care of <em>everything</em></h2>
+  <p class="contact-band-sub">Write or call us — we reply within 24 hours</p>
+  <div class="contact-methods">
+    <a href="tel:+390648905713" class="contact-method">
+      <span class="contact-method-label">Phone</span>
+      <span class="contact-method-value">06 4890 5713</span>
+    </a>
+    <a href="mailto:ristorantesuburra1930@gmail.com" class="contact-method">
+      <span class="contact-method-label">Email</span>
+      <span class="contact-method-value">ristorantesuburra1930@gmail.com</span>
+    </a>
+    <a href="contatti.html" class="contact-method">
+      <span class="contact-method-label">Contact form</span>
+      <span class="contact-method-value">Write to us online</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><img src="../logo.png" alt="Suburra 1930" class="footer-logo-img"></div>
+      <div class="footer-brand-sub">Food &amp; Liquori</div>
+      <p class="footer-brand-desc">Restaurant and cocktail bar in Rione Monti since 2015.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Menu</div>
+      <ul class="footer-links">
+        <li><a href="i-piatti-del-menu.html">Food</a></li>
+        <li><a href="menu-cocktail-signature.html">Signature Cocktailss</a></li>
+        <li><a href="menu-bevande.html">Drinks</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">The restaurant</div>
+      <ul class="footer-links">
+        <li><a href="chi-siamo.html">About us</a></li>
+        <li><a href="#compleanni">Birthdays</a></li>
+        <li><a href="#lauree">Graduation parties</a></li>
+        <li><a href="#aziendali">Corporate dinners</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacts</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Phone</span>
+        <span class="footer-contact-value"><a href="tel:+390648905713">06 4890 5713</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Address</span>
+        <span class="footer-contact-value">Piazza della Suburra 13/15<br>00184 Roma</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-legal">Dopolavoro S.r.l. · VAT 12934681003 · © 2026 Suburra 1930</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/suburra1930/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Suburra1930" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d8273642" target="_blank" rel="noopener">TripAdvisor</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+(function(){
+var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');
+if(h&&m){h.addEventListener('click',function(){m.classList.toggle('open');});
+document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target))m.classList.remove('open');});}
+})();
+</script>
+</body>
+</html>

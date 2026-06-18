@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ristorante e cocktail bar nel Rione Monti dal 2015. Cucina romana tradizionale, cocktail signature e dehors su Piazza della Suburra, a due passi dal Colosseo. Prenota ora.">
+<title>Suburra 1930 — Cucina e Liquori, Rione Monti, Roma</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE6D6;
+    --gold: #B8985A;
+    --gold-light: #D4B678;
+    --gold-pale: #F0E4C4;
+    --dark: #1A1612;
+    --dark-mid: #2C2620;
+    --dark-soft: #3D3530;
+    --text-body: #4A4340;
+    --text-muted: #7A7068;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Montserrat', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 72px;
+    background: rgba(26, 22, 18, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(184, 152, 90, 0.25);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    padding-top: 72px;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    background: var(--dark);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245, 240, 232, 0.5);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-desc {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(245, 240, 232, 0.65);
+    max-width: 34ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-ghost {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.6);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.2);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+  .hero-meta {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(245, 240, 232, 0.1);
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .hero-meta-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+  }
+
+  .hero-meta-value {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(245, 240, 232, 0.7);
+  }
+
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82) saturate(0.9);
+  }
+
+  .hero-image-caption {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: rgba(245, 240, 232, 0.7);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── STRIP INFO ── */
+  .info-strip {
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .info-strip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.1rem 2.5rem;
+    border-right: 1px solid rgba(26, 22, 18, 0.15);
+    text-decoration: none;
+  }
+
+  .info-strip-item:last-child { border-right: none; }
+
+  .info-strip-icon {
+    font-size: 1rem;
+    color: var(--dark-mid);
+    opacity: 0.7;
+  }
+
+  .info-strip-text {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section { position: relative; }
+
+  .section-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ── CHI SIAMO ── */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+  }
+
+  .about-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.88) saturate(0.85);
+  }
+
+  .about-images img:first-child {
+    grid-column: 1 / 3;
+    height: 320px;
+  }
+
+  .about-images img:nth-child(2),
+  .about-images img:nth-child(3) {
+    height: 260px;
+  }
+
+  .about-content {
+    padding: 5rem 5rem 5rem 4.5rem;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-text {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-body);
+    margin-bottom: 2rem;
+  }
+
+  .about-text strong {
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .about-detail {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 42ch;
+  }
+
+  /* ── MENU ── */
+  .menu-section {
+    background: var(--dark);
+    padding: 6rem 0;
+  }
+
+  .menu-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  .menu-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+  }
+
+  .menu-header .section-eyebrow { color: var(--gold); }
+  .menu-header .section-eyebrow::before { background: var(--gold); }
+
+  .menu-header .section-title { color: var(--cream); }
+  .menu-header .section-title em { color: var(--gold-light); }
+
+  .menu-tabs {
+    display: flex;
+    gap: 0;
+    border: 1px solid rgba(184, 152, 90, 0.25);
+  }
+
+  .menu-tab {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.45);
+    background: none;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-right: 1px solid rgba(184, 152, 90, 0.25);
+  }
+
+  .menu-tab:last-child { border-right: none; }
+  .menu-tab.active { background: var(--gold); color: var(--dark); }
+  .menu-tab:not(.active):hover { color: var(--gold-light); }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(184, 152, 90, 0.15);
+  }
+
+  .menu-card {
+    padding: 2.5rem;
+    border-right: 1px solid rgba(184, 152, 90, 0.15);
+    border-bottom: 1px solid rgba(184, 152, 90, 0.15);
+    position: relative;
+    transition: background 0.25s;
+  }
+
+  .menu-card:nth-child(even) { border-right: none; }
+  .menu-card:nth-last-child(-n+2) { border-bottom: none; }
+
+  .menu-card:hover { background: rgba(184, 152, 90, 0.06); }
+
+  .menu-card-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .menu-card-name {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .menu-card-desc {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(245, 240, 232, 0.45);
+    line-height: 1.7;
+  }
+
+  .menu-cta-bar {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(184, 152, 90, 0.15);
+    padding-top: 2rem;
+  }
+
+  .menu-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(245, 240, 232, 0.4);
+  }
+
+  /* ── EVENTS ── */
+  .events {
+    padding: 6rem 0;
+    background: var(--cream-dark);
+  }
+
+  .events-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin-top: 3rem;
+    background: rgba(184, 152, 90, 0.2);
+  }
+
+  .event-card {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+  }
+
+  .event-card:hover { background: var(--gold-pale); }
+
+  .event-icon {
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .event-title {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .event-desc {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.8;
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+
+  .event-link {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .event-link::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+
+  .event-card:hover .event-link::after { transform: translateX(4px); }
+
+  /* ── RECENSIONI ── */
+  .reviews {
+    background: var(--dark);
+    padding: 6rem 0;
+  }
+
+  .reviews-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  .reviews-scores {
+    display: flex;
+    gap: 4rem;
+    margin: 2.5rem 0 3.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(184, 152, 90, 0.15);
+  }
+
+  .score-block { display: flex; flex-direction: column; gap: 0.3rem; }
+
+  .score-platform {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+  }
+
+  .score-number {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .score-detail {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: rgba(245, 240, 232, 0.4);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(184, 152, 90, 0.1);
+  }
+
+  .review-card {
+    background: var(--dark-mid);
+    padding: 2rem;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+  }
+
+  .star { color: var(--gold); font-size: 0.8rem; }
+
+  .review-text {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(245, 240, 232, 0.7);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-author {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+  }
+
+  /* ── ORARI ── */
+  .orari {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+  }
+
+  .orari-map {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+  }
+
+  .orari-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    filter: saturate(0.4) brightness(0.9);
+  }
+
+  .orari-content {
+    background: var(--cream);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .orari-block { display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .orari-block-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .orari-block-value {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  .orari-block-note {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  .orari-divider {
+    width: 2rem;
+    height: 1px;
+    background: rgba(184, 152, 90, 0.4);
+  }
+
+  /* ── NEWS ── */
+  .news {
+    padding: 6rem 0;
+    background: var(--cream);
+  }
+
+  .news-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5rem;
+  }
+
+  .news-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(184, 152, 90, 0.2);
+  }
+
+  .news-card {
+    background: var(--cream);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+  }
+
+  .news-card:hover { background: var(--gold-pale); }
+
+  .news-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.7) brightness(0.9);
+    transition: filter 0.3s;
+  }
+
+  .news-card:hover .news-card-img { filter: saturate(0.85) brightness(0.95); }
+
+  .news-card-body { padding: 1.8rem 1.8rem 2rem; flex: 1; display: flex; flex-direction: column; }
+
+  .news-card-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+
+  .news-card-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.3;
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+
+  .news-card-excerpt {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 4rem 5rem 2.5rem;
+    border-top: 1px solid rgba(184, 152, 90, 0.2);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.06);
+  }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(245, 240, 232, 0.35);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand-desc {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.4);
+    max-width: 32ch;
+  }
+
+  .footer-col-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .footer-links a {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(245, 240, 232, 0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.25);
+  }
+
+  .footer-contact-value {
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: rgba(245, 240, 232, 0.6);
+  }
+
+  .footer-contact-value a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: rgba(245, 240, 232, 0.25);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .footer-social a {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-social a:hover { color: var(--gold-light); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-image { height: 45vw; }
+    .hero-text { padding: 3rem 2rem; }
+    .about { grid-template-columns: 1fr; }
+    .about-images img:first-child { height: 220px; }
+    .about-content { padding: 3rem 2rem; }
+    .menu-inner, .events-inner, .reviews-inner, .news-inner { padding: 0 1.5rem; }
+    .menu-grid, .events-grid, .reviews-grid, .news-grid { grid-template-columns: 1fr; }
+    .orari { grid-template-columns: 1fr; }
+    .orari-map { min-height: 280px; }
+    .orari-content { padding: 3rem 2rem; }
+    footer { padding: 3rem 1.5rem 2rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .menu-header { grid-template-columns: 1fr; }
+  }
+.has-dropdown{position:relative}.dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(26,22,18,.98);border:1px solid rgba(184,152,90,.25);border-top:2px solid var(--gold);list-style:none;min-width:200px;z-index:200;padding:.5rem 0}.has-dropdown:hover .dropdown{display:block}.dropdown a{display:block;padding:.6rem 1.2rem;font-size:.65rem!important;letter-spacing:.15em!important;color:rgba(245,240,232,.7)!important;white-space:nowrap}.dropdown a:hover{color:var(--gold-light)!important;background:rgba(184,152,90,.08)}
+
+
+/* ── NAV RIGHT ── */
+
+
+.lang-switcher { display: flex; gap: 0.25rem; align-items: center; }
+
+
+
+/* ── MOBILE LANG ── */
+
+.mobile-lang 
+.mobile-lang 
+
+
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.lang-btn .flag { font-size: 1rem; line-height: 1; }
+.lang-btn 
+.lang-btn:hover {
+  background: rgba(184,152,90,0.15);
+  border-color: rgba(184,152,90,0.6);
+  color: var(--gold-light);
+}
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+/* mobile lang switcher inside hamburger menu */
+
+.mobile-lang 
+.mobile-lang .lang-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+}
+@media (max-width: 900px) {
+  .lang-switcher { display: none; }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 88px;
+  background: rgba(26,22,18,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,152,90,0.25);
+}
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+.nav-logo-img:hover { opacity: 0.8; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 0.65rem 1.4rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── LANG SWITCHER ── */
+.lang-switcher { display: flex; gap: 4px; align-items: center; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid rgba(184,152,90,0.3);
+  background: rgba(26,22,18,0.5);
+  color: rgba(245,240,232,0.55);
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.flag-img {
+  width: 20px;
+  height: 14px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  object-fit: cover;
+}
+.lang-btn .lang-label { font-size: 0.6rem; }
+.lang-btn:hover { background: rgba(184,152,90,0.15); border-color: rgba(184,152,90,0.6); color: var(--gold-light); }
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+.lang-btn.active .lang-label { color: var(--dark); }
+
+/* ── MOBILE MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.25s; }
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0; right: 0;
+  background: rgba(26,22,18,0.98);
+  border-top: 1px solid rgba(184,152,90,0.2);
+  padding: 1.5rem;
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-item {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.8);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.1);
+  display: block;
+}
+.nav-mobile-item:last-child { border-bottom: none; }
+.nav-mobile-sub { padding-left: 1.2rem; font-size: 0.8rem; color: rgba(245,240,232,0.55); }
+.nav-mobile-cta {
+  margin-top: 1.2rem;
+  display: block;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 1rem;
+  text-decoration: none;
+}
+.mobile-lang {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(184,152,90,0.15);
+}
+.mobile-lang .lang-btn {
+  background: rgba(184,152,90,0.08);
+  border-color: rgba(184,152,90,0.2);
+  color: rgba(245,240,232,0.7);
+  font-size: 0.72rem;
+  padding: 6px 10px;
+}
+.mobile-lang .lang-btn.active { background: var(--gold); color: var(--dark); }
+.mobile-lang .flag-img { width: 22px; height: 15px; }
+.mobile-lang .lang-label { font-size: 0.68rem; }
+
+@media (max-width: 900px) {
+  nav { padding: 0 1.2rem; height: 72px; }
+  .nav-logo-img { height: 46px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .lang-switcher { display: none; }
+  .nav-mobile-menu { top: 72px; }
+}
+
+/* ── GOLD TEXT: bold + slightly larger ── */
+.section-eyebrow,
+.hero-eyebrow,
+.page-hero-eyebrow,
+.menu-card-tag,
+.cocktail-tag,
+.news-card-cat,
+.news-card-date,
+.score-platform,
+.review-author,
+.orario-label,
+.footer-col-title,
+.footer-contact-label,
+.info-strip-text,
+.event-icon,
+.cap-label,
+.orari-block-label,
+.contact-block-label,
+.bev-section-title,
+.menu-category-title,
+.menu-subsection-title,
+.event-feature::before,
+.badge,
+.menu-item-price { font-weight: 700 !important; }
+
+.section-eyebrow { font-size: 0.73rem !important; }
+.page-hero-eyebrow { font-size: 0.73rem !important; }
+.hero-eyebrow { font-size: 0.73rem !important; }
+.menu-item-price { font-size: 1.05rem !important; }
+.footer-col-title { font-size: 0.73rem !important; }
+.footer-contact-label { font-size: 0.71rem !important; }
+
+/* ── FOOTER FONT SIZE BOOST ── */
+.footer-links a { font-size: 0.88rem !important; }
+.footer-brand-desc { font-size: 0.88rem !important; }
+.footer-contact-value { font-size: 1.05rem !important; }
+.footer-contact-value a { font-size: 1.05rem !important; }
+.footer-legal { font-size: 0.76rem !important; }
+.footer-social a { font-size: 0.74rem !important; font-weight: 700 !important; }
+
+</style>
+</head>
+<body>
+<script>
+function setLang(l,u){localStorage.setItem('suburra_lang',l);window.location.href=u;}
+(function(){
+  var p=window.location.pathname,c='it';
+  if(/\/en\//.test(p))c='en';else if(/\/es\//.test(p))c='es';else if(/\/fr\//.test(p))c='fr';
+  var s=localStorage.getItem('suburra_lang');
+  if(s&&s!==c){
+    var f=p.split('/').pop()||'index.html';
+    var b=window.location.href.replace(/[^\/]*$/,'').replace(/\/(en|es|fr)\/$/,'/');
+    window.location.replace(s==='it'?b+f:b+s+'/'+f);
+  }
+})();
+</script>
+
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Suburra 1930" class="nav-logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="chi-siamo.html">Chi siamo</a></li>
+    <li class="has-dropdown"><a href="menu.html">Menù</a>
+      <ul class="dropdown">
+        <li><a href="i-piatti-del-menu.html">Cucina</a></li>
+        <li><a href="menu-bevande.html">Bevande</a></li>
+        <li><a href="menu-cocktail-signature.html">Cocktail Signature</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="eventi-privati.html">Eventi privati</a>
+      <ul class="dropdown">
+        <li><a href="compleanno-a-roma.html">Compleanni</a></li>
+        <li><a href="festa-di-laurea-roma.html">Lauree</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cene aziendali</a></li>
+      </ul>
+    </li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher"><a href="index.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">IT</span></a><a href="en/index.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">EN</span></a><a href="es/index.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">ES</span></a><a href="fr/index.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">FR</span></a></div>
+    <a href="https://pro.pns.sm/7h27rbg" class="nav-cta" target="_blank" rel="noopener">Prenota</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="nav-mobile-item">Home</a>
+  <a href="chi-siamo.html" class="nav-mobile-item">Chi siamo</a>
+  <a href="i-piatti-del-menu.html" class="nav-mobile-item nav-mobile-sub">— Cucina</a>
+  <a href="menu-bevande.html" class="nav-mobile-item nav-mobile-sub">— Bevande</a>
+  <a href="menu-cocktail-signature.html" class="nav-mobile-item nav-mobile-sub">— Cocktail Signature</a>
+  <a href="compleanno-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Compleanni</a>
+  <a href="festa-di-laurea-roma.html" class="nav-mobile-item nav-mobile-sub">— Lauree</a>
+  <a href="cena-aziendale-a-roma.html" class="nav-mobile-item nav-mobile-sub">— Cene aziendali</a>
+  <a href="news.html" class="nav-mobile-item">News</a>
+  <a href="contatti.html" class="nav-mobile-item">Contatti</a>
+  <div class="mobile-lang"><a href="index.html" class="lang-btn active" onclick="localStorage.setItem('suburra_lang','it')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23009246'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ce2b37'/%3E%3C/svg%3E" class="flag-img" alt="Italiano"><span class="lang-label">Italiano</span></a><a href="en/index.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','en')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%2060%2030'%3E%3CclipPath%20id%3D'a'%3E%3Cpath%20d%3D'M0%200v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath%20id%3D'b'%3E%3Cpath%20d%3D'M30%2015h30v15zv15H0zH0V0zV0h30z'/%3E%3C/clipPath%3E%3Cg%20clip-path%3D'url(%23a)'%3E%3Cpath%20d%3D'M0%200v30h60V0z'%20fill%3D'%23012169'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20stroke%3D'%23fff'%20stroke-width%3D'6'/%3E%3Cpath%20d%3D'M0%200l60%2030m0-30L0%2030'%20clip-path%3D'url(%23b)'%20stroke%3D'%23C8102E'%20stroke-width%3D'4'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23fff'%20stroke-width%3D'10'/%3E%3Cpath%20d%3D'M30%200v30M0%2015h60'%20stroke%3D'%23C8102E'%20stroke-width%3D'6'/%3E%3C/g%3E%3C/svg%3E" class="flag-img" alt="English"><span class="lang-label">English</span></a><a href="es/index.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','es')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23c60b1e'/%3E%3Crect%20y%3D'.5'%20width%3D'3'%20height%3D'1'%20fill%3D'%23ffc400'/%3E%3C/svg%3E" class="flag-img" alt="Español"><span class="lang-label">Español</span></a><a href="fr/index.html" class="lang-btn " onclick="localStorage.setItem('suburra_lang','fr')"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D'http://www.w3.org/2000/svg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'1'%20height%3D'2'%20fill%3D'%23002395'/%3E%3Crect%20x%3D'1'%20width%3D'1'%20height%3D'2'%20fill%3D'%23fff'/%3E%3Crect%20x%3D'2'%20width%3D'1'%20height%3D'2'%20fill%3D'%23ED2939'/%3E%3C/svg%3E" class="flag-img" alt="Français"><span class="lang-label">Français</span></a></div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+  <a href="https://pro.pns.sm/7h27rbg" class="nav-mobile-cta" target="_blank" rel="noopener">Prenota</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow">Rione Monti · Roma · Dal 2015</span>
+    <h1 class="hero-title">Cucina <em>romana</em><br>e cocktail bar</h1>
+    <p class="hero-subtitle">Piazza della Suburra</p>
+    <p class="hero-desc">Nel cuore antico di Roma, a due passi dal Colosseo. Cucina della tradizione, cocktail con una propria identità, dehors sulla piazza più antica della città.</p>
+    <div class="hero-actions">
+      <a href="https://pro.pns.sm/7h27rbg" class="btn-primary" target="_blank" rel="noopener">Prenota un tavolo</a>
+      <a href="menu.html" class="btn-ghost">Scopri il menù</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Indirizzo</span>
+        <span class="hero-meta-value">Piazza della Suburra 13/15</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Telefono</span>
+        <span class="hero-meta-value"><a href="tel:+390648905713" style="color:inherit;text-decoration:none;">06 4890 5713</a></span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Apertura</span>
+        <span class="hero-meta-value">Tutti i giorni</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2022/02/5R6A6131-scaled.jpg"
+      alt="Bartender al banco di Suburra 1930"
+      loading="eager"
+    >
+    <span class="hero-image-caption">Cucina &amp; Liquori</span>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <a href="tel:+390648905713" class="info-strip-item">
+    <span class="info-strip-icon">📞</span>
+    <span class="info-strip-text">06 4890 5713</span>
+  </a>
+  <a href="https://maps.app.goo.gl/y6qzPdXEbDiKo7UQ7" class="info-strip-item" target="_blank" rel="noopener">
+    <span class="info-strip-icon">📍</span>
+    <span class="info-strip-text">Piazza della Suburra 13/15</span>
+  </a>
+  <div class="info-strip-item">
+    <span class="info-strip-icon">🕐</span>
+    <span class="info-strip-text">Pranzo 12:15–15:30 · Cena 18:30–23:30</span>
+  </div>
+  <a href="https://www.instagram.com/suburra1930/" class="info-strip-item" target="_blank" rel="noopener">
+    <span class="info-strip-icon">📸</span>
+    <span class="info-strip-text">@suburra1930</span>
+  </a>
+</div>
+
+<!-- CHI SIAMO -->
+<section class="about">
+  <div class="about-images">
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2019/01/suburra-locale-1200x800-9-1.jpg"
+      alt="Interno sala Suburra 1930"
+      loading="lazy"
+    >
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2019/01/Esterno-1-1.png"
+      alt="Esterno ristorante con dehors"
+      loading="lazy"
+    >
+    <img
+      src="https://suburra1930.it/wp-content/uploads/2019/01/suburra-locale-1200x800-8-1.jpg"
+      alt="Sala con cocktail bar a vista"
+      loading="lazy"
+    >
+  </div>
+  <div class="about-content">
+    <span class="section-eyebrow">La nostra storia</span>
+    <h2 class="section-title">Una piazza antica,<br><em>un locale di oggi</em></h2>
+    <p class="about-text">
+      Lorenzo e Mauro hanno aperto Suburra 1930 nel 2015, in quella che forse è la piazza più antica di Roma. Un posto dove si mangia bene, si beve meglio — e si torna volentieri.
+    </p>
+    <p class="about-detail">
+      Cucina romana tradizionale rivisitata con ingredienti freschi e materie prime di qualità. Un cocktail bar con una propria identità, non accessoria. Il dehors affacciato sulla piazza: il posto giusto per ogni stagione.
+    </p>
+    <a href="chi-siamo.html" class="btn-ghost" style="color: var(--gold); border-color: rgba(184,152,90,0.4);">Scopri di più</a>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section">
+  <div class="menu-inner">
+    <div class="menu-header">
+      <div>
+        <span class="section-eyebrow">Mangiare e bere</span>
+        <h2 class="section-title">Il <em>menù</em></h2>
+      </div>
+      <div class="menu-tabs">
+        <button class="menu-tab active">Cucina</button>
+        <button class="menu-tab">Cocktail</button>
+        <button class="menu-tab">Bevande</button>
+      </div>
+    </div>
+
+    <div class="menu-grid" id="menu-cards-grid">
+      <div class="menu-card">
+        <div class="menu-card-tag">Antipasti</div>
+        <div class="menu-card-name">Supplì e fritti della tradizione</div>
+        <div class="menu-card-desc">Tutto il fritto romano — leggero, croccante, fatto al momento.</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-tag">Primi</div>
+        <div class="menu-card-name">Pasta fresca e secca</div>
+        <div class="menu-card-desc">Carbonara, cacio e pepe, amatriciana. Anche paste stagionali e piatti del giorno.</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-tag">Secondi</div>
+        <div class="menu-card-name">Carne, pesce, cucina di territorio</div>
+        <div class="menu-card-desc">Dai classici romani ai piatti più originali, sempre con materie prime fresche.</div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-tag">Dolci</div>
+        <div class="menu-card-name">Tiramisù e pasticceria del giorno</div>
+        <div class="menu-card-desc">Dolci fatti in casa. Il tiramisù è una certezza.</div>
+      </div>
+    </div>
+
+    <div class="menu-cta-bar">
+      <span class="menu-note">Menù stagionale · aggiornato regolarmente</span>
+      <a href="menu.html" class="btn-primary">Vedi il menù completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTI PRIVATI -->
+<section class="events">
+  <div class="events-inner">
+    <span class="section-eyebrow">Festeggiate con noi</span>
+    <h2 class="section-title">Eventi <em>privati</em></h2>
+
+    <div class="events-grid">
+      <a href="compleanno-a-roma.html" class="event-card">
+        <div class="event-icon">🎂</div>
+        <div class="event-title">Compleanni</div>
+        <div class="event-desc">Una sala riservata nel cuore di Roma, a due passi dal Colosseo. Menù dedicato, cocktail di benvenuto, atmosfera curata.</div>
+        <span class="event-link">Scopri di più</span>
+      </a>
+      <a href="festa-di-laurea-roma.html" class="event-card">
+        <div class="event-icon">🎓</div>
+        <div class="event-title">Feste di laurea</div>
+        <div class="event-desc">Un traguardo merita un posto speciale. Organizziamo tutto noi — dalla prenotazione al brindisi finale.</div>
+        <span class="event-link">Scopri di più</span>
+      </a>
+      <a href="cena-aziendale-a-roma.html" class="event-card">
+        <div class="event-icon">🤝</div>
+        <div class="event-title">Cene aziendali</div>
+        <div class="event-desc">Dalla cena di team al pranzo di lavoro. Location discreta, servizio professionale, cucina che fa fare bella figura.</div>
+        <span class="event-link">Scopri di più</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="reviews-inner">
+    <span class="section-eyebrow" style="color:var(--gold);">Dicono di noi</span>
+    <h2 class="section-title light">Cosa dicono<br>i nostri <em style="color:var(--gold-light);">ospiti</em></h2>
+
+    <div class="reviews-scores">
+      <div class="score-block">
+        <span class="score-platform">Google</span>
+        <span class="score-number">4.3</span>
+        <span class="score-detail">su 5 · 668 recensioni</span>
+      </div>
+      <div class="score-block">
+        <span class="score-platform">TripAdvisor</span>
+        <span class="score-number">4.5</span>
+        <span class="score-detail">su 5 · 1.064 recensioni</span>
+      </div>
+      <div class="score-block">
+        <span class="score-platform">TheFork</span>
+        <span class="score-number">8.7</span>
+        <span class="score-detail">su 10 · TheFork</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Dopo 10 giorni a Roma a provare tantissimi ristoranti, questo è stato di gran lunga il migliore. Ogni piatto era un perfetto equilibrio di sapori, presentato magnificamente e preparato con gli ingredienti più freschi."</p>
+        <span class="review-author">Louis · Google</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Ormai vengo qui da anni. Proprietari e camerieri sono gentilissimi e ti fanno sentire a casa. Gusti ricercati e ottima carta dei vini. Suburra 1930 è assolutamente una meta obbligata!"</p>
+        <span class="review-author">Cliente abituale · TripAdvisor</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Ottima accoglienza e servizio, locale molto carino. Soddisfatti degli antipasti e dei cocktail. Il locale è molto curato, lo staff simpaticissimo e i cocktail speciali Suburra sono superiori alla media."</p>
+        <span class="review-author">Alessandro V. · TheFork</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORARI E MAPPA -->
+<section class="orari">
+  <div class="orari-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.0!2d12.4942!3d41.8918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b71e44c16b%3A0x6c7a51c6e44b4e95!2sSuburra%201930!5e0!3m2!1sit!2sit!4v1234567890"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mappa Suburra 1930 - Piazza della Suburra, Roma"
+    ></iframe>
+  </div>
+  <div class="orari-content">
+    <span class="section-eyebrow">Come raggiungerci</span>
+    <h2 class="section-title" style="font-size:2rem;">Orari &amp; <em>posizione</em></h2>
+
+    <div class="orari-block">
+      <span class="orari-block-label">Pranzo</span>
+      <span class="orari-block-value">12:15 – 15:30<br>(cucina fino alle 15:15)</span>
+    </div>
+    <div class="orari-divider"></div>
+    <div class="orari-block">
+      <span class="orari-block-label">Cena</span>
+      <span class="orari-block-value">18:30 – 23:30<br>(cucina fino alle 22:45)</span>
+    </div>
+    <div class="orari-divider"></div>
+    <div class="orari-block">
+      <span class="orari-block-label">Chiusura settimanale</span>
+      <span class="orari-block-value">Giovedì — solo cena</span>
+      <span class="orari-block-note">Gli altri giorni aperti a pranzo e cena</span>
+    </div>
+    <div class="orari-divider"></div>
+    <div class="orari-block">
+      <span class="orari-block-label">Indirizzo</span>
+      <span class="orari-block-value">Piazza della Suburra 13/15<br>Via Urbana 67 · 00184 Roma</span>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news">
+  <div class="news-inner">
+    <div class="news-header">
+      <div>
+        <span class="section-eyebrow">Aggiornamenti</span>
+        <h2 class="section-title">Le ultime <em>news</em></h2>
+      </div>
+      <a href="news.html" class="btn-ghost" style="color:var(--gold);border-color:rgba(184,152,90,0.4);white-space:nowrap;">Tutte le news</a>
+    </div>
+
+    <div class="news-grid">
+      <a href="news.html" class="news-card">
+        <img
+          src="https://suburra1930.it/wp-content/uploads/2019/01/449937044_18304727551080116_1067546559972843687_n.jpg"
+          alt="Race for the Cure 2026"
+          class="news-card-img"
+          loading="lazy"
+        >
+        <div class="news-card-body">
+          <span class="news-card-date">Aprile 2026</span>
+          <div class="news-card-title">Race for the Cure 2026 al Circo Massimo</div>
+          <p class="news-card-excerpt">La corsa solidale torna a Roma. Suburra 1930 apre le porte al Rione Monti per l'occasione.</p>
+        </div>
+      </a>
+      <a href="news.html" class="news-card">
+        <img
+          src="https://suburra1930.it/wp-content/uploads/2024/06/Festa-Nipote-Mauro-Suburra-193020-1.jpg"
+          alt="Cene aziendali Suburra 1930"
+          class="news-card-img"
+          loading="lazy"
+        >
+        <div class="news-card-body">
+          <span class="news-card-date">Febbraio 2026</span>
+          <div class="news-card-title">Pranzi e cene aziendali nel cuore di Roma</div>
+          <p class="news-card-excerpt">Una location esclusiva per eventi di lavoro. Scopri come organizziamo le tue cene aziendali.</p>
+        </div>
+      </a>
+      <a href="news.html" class="news-card">
+        <img
+          src="https://suburra1930.it/wp-content/uploads/2022/02/5R6A5316-scaled.jpg"
+          alt="Sei Nazioni di Rugby a Roma"
+          class="news-card-img"
+          loading="lazy"
+        >
+        <div class="news-card-body">
+          <span class="news-card-date">Febbraio 2026</span>
+          <div class="news-card-title">Dove mangiare a Roma durante il Sei Nazioni</div>
+          <p class="news-card-excerpt">Le partite del Sei Nazioni di Rugby a Roma sono tra gli eventi sportivi più sentiti della capitale.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name"><img src="logo.png" alt="Suburra 1930" class="footer-logo-img"></div>
+      
+      <p class="footer-brand-desc">Ristorante e cocktail bar nel Rione Monti dal 2015. Cucina romana tradizionale, cocktail signature, dehors su Piazza della Suburra.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Menù</div>
+      <ul class="footer-links">
+        <li><a href="i-piatti-del-menu.html">Cucina</a></li>
+        <li><a href="menu-bevande.html">Bevande</a></li>
+        <li><a href="menu-cocktail-signature.html">Cocktail Signature</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Il locale</div>
+      <ul class="footer-links">
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="compleanno-a-roma.html">Compleanni</a></li>
+        <li><a href="festa-di-laurea-roma.html">Feste di laurea</a></li>
+        <li><a href="cena-aziendale-a-roma.html">Cene aziendali</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contatti</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Telefono</span>
+        <span class="footer-contact-value"><a href="tel:+390648905713">06 4890 5713</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Email</span>
+        <span class="footer-contact-value"><a href="mailto:ristorantesuburra1930@gmail.com">ristorantesuburra1930@gmail.com</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-label">Indirizzo</span>
+        <span class="footer-contact-value">Piazza della Suburra 13/15<br>00184 Roma (Rione Monti)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-legal">Dopolavoro S.r.l. · P. IVA 12934681003 · © 2026 Suburra 1930 · <a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Cookie</a></span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/suburra1930/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/Suburra1930" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.it/Restaurant_Review-g187791-d8273642" target="_blank" rel="noopener">TripAdvisor</a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script>
+(function(){
+  // Fix menu tabs on homepage
+  var tabs = document.querySelectorAll('.menu-tab');
+  if (!tabs.length) return;
+  var cards = [
+    [
+      {tag:'Antipasti',name:'Supplì e fritti della tradizione',desc:'Tutto il fritto romano — leggero, croccante, fatto al momento.'},
+      {tag:'Primi',name:'Pasta fresca e secca',desc:'Carbonara, cacio e pepe, amatriciana. Anche paste stagionali.'},
+      {tag:'Secondi',name:'Carne, pesce, cucina di territorio',desc:'Dai classici romani ai piatti più originali, sempre con materie prime fresche.'},
+      {tag:'Dolci',name:'Tiramisù e pasticceria del giorno',desc:'Dolci fatti in casa. Il tiramisù è una certezza.'}
+    ],
+    [
+      {tag:'Signature',name:'Suburra',desc:'Vodka, basilico, zenzero, lime, albume, estratto al peperoncino.'},
+      {tag:'Signature',name:'Basilico'',desc:'Gin, frutto della passione, ananas fresco, basilico, limone.'},
+      {tag:'Signature',name:'Cucumber Tonic',desc:'Vodka, tonica, cetriolo pestato, lime e pepe.'},
+      {tag:'Gin & Tonic',name:'Selezione Gin & Tonic',desc:'Oltre 40 etichette di gin con toniche Fever-Tree. Chiedi il menù.'}
+    ],
+    [
+      {tag:'Vini',name:'Selezione vini italiani',desc:'Bianchi, rossi e bollicine. Calice o bottiglia — chiedi al personale.'},
+      {tag:'Birre',name:'Menabrea & Birra del Borgo',desc:'Bionda, rossa e IPA artigianale italiana.'},
+      {tag:'Digestivi',name:'Amari e distillati',desc:'Selezione di amari italiani, grappe e distillati Gran Riserva.'},
+      {tag:'Analcolici',name:'Mocktail e soft drink',desc:'Acqua trattata, bibite, caffè e mocktail del giorno.'}
+    ]
+  ];
+  var grid = document.getElementById('menu-cards-grid');
+  function renderCards(idx) {
+    if (!grid) return;
+    grid.innerHTML = cards[idx].map(function(c){
+      return '<div class="menu-card"><div class="menu-card-tag">'+c.tag+'</div><div class="menu-card-name">'+c.name+'</div><div class="menu-card-desc">'+c.desc+'</div></div>';
+    }).join('');
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      renderCards(i);
+    });
+  });
+  renderCards(0);
+})();
+</script>
+
+<script>
+(function(){
+var h=document.getElementById('hamburger'),m=document.getElementById('mobileMenu');
+if(h&&m){h.addEventListener('click',function(){m.classList.toggle('open');});
+document.addEventListener('click',function(e){if(!h.contains(e.target)&&!m.contains(e.target))m.classList.remove('open');});}
+})();
+</script>
+</body>
+</html>
